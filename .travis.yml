@@ -1,4 +1,7 @@
 language: node_js
 node_js: node
 
+<<<<<<< HEAD
 deploy: apple-tart-19897
+=======
+>>>>>>> 4264cdbaacef42383958fe50185d3480fc65e4d8
