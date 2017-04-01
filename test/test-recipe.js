@@ -45,10 +45,10 @@ it('should list Recipes on GET', function(){
 });
 
 it('should add an item on POST', function(){
-  const newItem = {name: 'garlic chicken', ingredients: ['garlic', 'chicken', 'butter']};
+  const newRecipe = {name: 'garlic chicken', ingredients: ['garlic', 'chicken', 'butter']};
   return chai.request(app)
   .post('/recipes')
-  .send(newItem)
+  .send(newRecipe)
   .then(function(res){
     res.should.have.status(201);
     res.should.be.json;
@@ -56,7 +56,7 @@ it('should add an item on POST', function(){
     res.body.should.include.keys('id', 'name', 'ingredients');
     res.body.id.should.not.be.null;
 
-    res.body.should.deep.equal(Object.assign(newItem, {id: res.body.id}));
+    res.body.should.deep.equal(Object.assign(newRecipe, {id: res.body.id}));
 
   });
 });
